@@ -23,7 +23,7 @@ lim = 100
 def primes(num):
     for i in range(2,num+1):
         counter = 0
-        for j in range(0, math.sqrt(i)):
+        for j in range(0, math.ceil(math.sqrt(i))):
             if i%2==0:
                 counter +=1
             else:
