@@ -40,8 +40,7 @@ for i in range(10):
 # 6x7 = 42
 # 6x8 = 48
 
-# num = int(input("Wprowadź liczbę: "))
-num = 9
+num = int(input("Wprowadź liczbę: "))
 for i in range(1, 11):
     print(num, "x", i, "=", num * i)
 
