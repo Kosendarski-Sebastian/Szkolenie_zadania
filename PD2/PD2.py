@@ -31,7 +31,7 @@ print(FizzBuzz())
 
 def Divisors(n):
     divisors = []
-    stop = int(np.sqrt(n)) - 1
+    stop = int(np.sqrt(n))
     for i in range(1, stop):
         if n % i == 0:
             divisors.append(i)
@@ -40,4 +40,4 @@ def Divisors(n):
     return divisors
 
 
-print(Divisors(100))
+print(Divisors(1331))
