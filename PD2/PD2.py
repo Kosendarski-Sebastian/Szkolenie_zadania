@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import datetime as dt
 
 
 # ----------------------------------------------------------------------------------------------------------------
@@ -40,4 +41,36 @@ def Divisors(n):
     return divisors
 
 
-print(Divisors(1331))
+print(Divisors(3600))
+
+
+# ------------------------------------------------------------------------------------------------------------------------
+# 3. Napisz funkcję, która będzie podawała wiek danej osoby, jesli podany zostanie rok.
+
+# Sprawdzenie czy rok jest przestępny
+def Leap_year(year):
+    if year % 400 == 0 or (year % 100 != 0 and year % 4 == 0):
+        return True
+    else:
+        return False
+
+
+def Age(y, m, d):
+    birth_date = dt.date(y, m, d)
+    actual_date = dt.date.today()
+    if (birth_date.month == 2
+            and birth_date.day == 29
+            and Leap_year(actual_date.year) == False
+            and actual_date.month == 2
+            and actual_date.day == 28):  # wyjątek urodzony w roku przestępnym, sprawdzanie wieku w roku nieprzestępnym
+        age = actual_date.year - birth_date.year
+    elif birth_date.month > actual_date.month or (
+            birth_date.month == actual_date.month and birth_date.day > actual_date.day):
+        age = actual_date.year - birth_date.year - 1
+    else:
+        age = actual_date.year - birth_date.year
+
+    return age
+
+
+print(Age(1974, 6, 24))
