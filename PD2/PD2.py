@@ -22,4 +22,22 @@ def FizzBuzz():
             v.append(i)
     return v
 
+
 print(FizzBuzz())
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+# 2. Napisz funkcję, która będzie wymieniała wszystkie dzielniki danej liczby
+
+def Divisors(n):
+    divisors = []
+    stop = int(np.sqrt(n)) - 1
+    for i in range(1, stop):
+        if n % i == 0:
+            divisors.append(i)
+            divisors.append(int(n / i))
+    divisors.sort()
+    return divisors
+
+
+print(Divisors(100))
