@@ -85,6 +85,31 @@ def Search(text):
     else:
         return False
 
+
 text = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 print(Search(text))
+
+#-----------------------------------------------------------------------------------------------------------------------
+# 5. Napisz funkcję, która będzie liczyła ile razy w łańcuchu znaków występują samogłoski
+
+def Vowels(text):
+    vowels = ['A', 'Ą', 'E', 'Ę', 'I', 'O', 'Ó', 'U', 'Y']
+    counter = 0
+    for character in text:
+        if character.upper() in vowels:
+            counter += 1
+
+    return counter
+
+test_text = 'Napisz funkcję, która będzie liczyła ile razy w łańcuchu znaków występują samogłoski'
+
+print(Vowels(test_text))
+
+#-----------------------------------------------------------------------------------------------------------------------
+#1. Napisz 3 klasy, które prezentują zależność Czlowiek -> Dziecko -> Przedszkolak
+#Czlowiek niech ma imie, wiek i plec oraz 2 dowolne metody
+#Dziecko niech ma cechy klasy nadrzednej oraz ulubioną zabawkę
+#Przedszkolak musi mieć podana grupe, do ktorej uczeszcza
+#Każda klasa musi posiadać metodę 'show_info' i konstruktor
+
