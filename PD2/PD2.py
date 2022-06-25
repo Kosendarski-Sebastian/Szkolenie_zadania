@@ -62,7 +62,7 @@ def Age(y, m, d):
             and birth_date.day == 29
             and Leap_year(actual_date.year) == False
             and actual_date.month == 2
-            and actual_date.day == 28):  # wyjątek urodzony w roku przestępnym, sprawdzanie wieku w roku nieprzestępnym
+            and actual_date.day == 28):
         age = actual_date.year - birth_date.year
     elif birth_date.month > actual_date.month or (
             birth_date.month == actual_date.month and birth_date.day > actual_date.day):
