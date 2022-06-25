@@ -52,15 +52,15 @@ for i in range(1, 11):
 # Policz elementy słownika
 # Wyczyść słownik.
 
-dict = {"Ania": 1200, "Ola": 1300, "Arek": 3000}
-print(dict)
-dict.update({"Ania": 200,
-             "Arek": 100})
-print("Czy w słowniku istnieje Ola: ", "Ola" in dict.keys())
-print("Czy w ktoś zarabia 200: ", 200 in dict.values())
-print("Słownik ma ", len(dict), "elementy")
-dict.clear()
-print(dict)
+dict1 = {"Ania": 1200, "Ola": 1300, "Arek": 3000}
+print(dict1)
+dict1.update({"Ania": 200,
+              "Arek": 100})
+print("Czy w słowniku istnieje Ola: ", "Ola" in dict1.keys())
+print("Czy w ktoś zarabia 200: ", 200 in dict1.values())
+print("Słownik ma ", len(dict1), "elementy")
+dict1.clear()
+print(dict1)
 
 # ----------------------------------------------------------------------------------------------------------------
 # 6. *Biorąc pod uwagę wartości listy i listę kluczy, przekonwertuj te wartości na pary
@@ -74,9 +74,8 @@ value_list = ["A", 8, "is", 3, "B", 7, "C", 1, "D", 3]
 key_list = ["name", "number"]
 dict_list = []
 
-for i in range(int(len(value_list)/2)):
+for i in range(int(len(value_list) / 2)):
     temp_dict = {key_list[0]: value_list[2 * i], key_list[1]: value_list[2 * i + 1]}
     dict_list.append(temp_dict)
 
 print(dict_list)
-

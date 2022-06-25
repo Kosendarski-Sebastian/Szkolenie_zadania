@@ -46,3 +46,7 @@ print(len(list7_num)/2)
 # else:
 #     median = (list7_num[len(list7_num)/2]+ list7_num[len(list7_num)/2 -1])/2
 #     print(median)
+
+
+import numpy
+
