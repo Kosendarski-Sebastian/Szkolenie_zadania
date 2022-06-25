@@ -74,3 +74,17 @@ def Age(y, m, d):
 
 
 print(Age(1974, 6, 24))
+
+
+# 4. Napisz funkcję, która będzie szukala podanego znaku w ciagu znaków
+
+def Search(text):
+    char = str(input('Podaj znak:'))
+    if char in text:
+        return True
+    else:
+        return False
+
+text = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+print(Search(text))
