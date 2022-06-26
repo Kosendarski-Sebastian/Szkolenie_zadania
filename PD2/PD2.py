@@ -188,7 +188,7 @@ class Budynek():
         self.places = places
 
     def bedroom(self):
-        print("Object has {} places in bedroom bedroom".format(self.places))
+        print("It has {} places in bedroom".format(self.places))
 
     def clean(self):
         print("The bedroom is cleaned")
