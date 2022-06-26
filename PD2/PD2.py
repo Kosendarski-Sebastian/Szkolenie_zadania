@@ -206,3 +206,4 @@ kamp.ride()
 kamp.refuel()
 kamp.bedroom()
 kamp.clean()
+
