@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 import datetime as dt
 
 
@@ -62,7 +61,7 @@ def Age(y, m, d):
             and birth_date.day == 29
             and Leap_year(actual_date.year) == False
             and actual_date.month == 2
-            and actual_date.day == 28):
+            and actual_date.day == 28):  # wyjatek dla urodzonego 29.02 - w latach nieprzestepnych przyjmujemy 28.02 jako dzien urodzin
         age = actual_date.year - birth_date.year
     elif birth_date.month > actual_date.month or (
             birth_date.month == actual_date.month and birth_date.day > actual_date.day):
@@ -76,21 +75,22 @@ def Age(y, m, d):
 print(Age(1974, 6, 24))
 
 
-# 4. Napisz funkcję, która będzie szukala podanego znaku w ciagu znaków
+# # 4. Napisz funkcję, która będzie szukala podanego znaku w ciagu znaków
+#
+# def Search(text):
+#     char = str(input('Podaj znak:'))
+#     if char in text:
+#         return True
+#     else:
+#         return False
+#
+#
+# text = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#
+# print(Search(text))
 
-def Search(text):
-    char = str(input('Podaj znak:'))
-    if char in text:
-        return True
-    else:
-        return False
 
-
-text = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
-print(Search(text))
-
-#-----------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------
 # 5. Napisz funkcję, która będzie liczyła ile razy w łańcuchu znaków występują samogłoski
 
 def Vowels(text):
@@ -102,14 +102,67 @@ def Vowels(text):
 
     return counter
 
+
 test_text = 'Napisz funkcję, która będzie liczyła ile razy w łańcuchu znaków występują samogłoski'
 
 print(Vowels(test_text))
 
-#-----------------------------------------------------------------------------------------------------------------------
-#1. Napisz 3 klasy, które prezentują zależność Czlowiek -> Dziecko -> Przedszkolak
-#Czlowiek niech ma imie, wiek i plec oraz 2 dowolne metody
-#Dziecko niech ma cechy klasy nadrzednej oraz ulubioną zabawkę
-#Przedszkolak musi mieć podana grupe, do ktorej uczeszcza
-#Każda klasa musi posiadać metodę 'show_info' i konstruktor
 
+# -----------------------------------------------------------------------------------------------------------------------
+# 1. Napisz 3 klasy, które prezentują zależność Czlowiek -> Dziecko -> Przedszkolak
+# Czlowiek niech ma imie, wiek i plec oraz 2 dowolne metody
+# Dziecko niech ma cechy klasy nadrzednej oraz ulubioną zabawkę
+# Przedszkolak musi mieć podana grupe, do ktorej uczeszcza
+# Każda klasa musi posiadać metodę 'show_info' i konstruktor
+
+class Czlowiek():
+    def __init__(self, name, age, sex):
+        self.name = name
+        self.age = age
+        self.sex = sex
+
+    def drink(self, drink):
+        print('{} drinks {}'.format(self.name, drink))
+
+    def sleep(self):
+        print('{} sleeps'.format(self.name))
+
+    def show_info(self):
+        print("My name is {}".format(self.name))
+        print("I am {} years old".format(self.age))
+
+
+class Dziecko(Czlowiek):
+    def __init__(self, name, age, sex, fav_toy):
+        super().__init__(name, age, sex)
+        self.fav_toy = fav_toy
+
+    def show_info(self):
+        super().show_info()
+        print("{} is my favourite toy".format(self.fav_toy))
+
+
+class Przedszkolak(Dziecko):
+    def __init__(self, name, age, sex, fav_toy, group):
+        super().__init__(name, age, sex, fav_toy)
+        self.group = group
+
+    def show_info(self):
+        super().show_info()
+        print("{} is my group".format(self.group))
+
+
+human = Czlowiek(name="Tomasz", age=42, sex="M")
+kid = Dziecko(name="Ania", age=8, sex="F", fav_toy="Dollhause")
+kid2 = Przedszkolak(name="Michał", age=5, sex="M", fav_toy="Teddy bear", group="Smurfs")
+
+
+human.show_info()
+human.sleep()
+human.drink("water")
+
+kid.show_info()
+kid.drink("juice")
+
+kid2.show_info()
+kid2.sleep()
