@@ -75,19 +75,19 @@ def Age(y, m, d):
 print(Age(1974, 6, 24))
 
 
-# # 4. Napisz funkcję, która będzie szukala podanego znaku w ciagu znaków
-#
-# def Search(text):
-#     char = str(input('Podaj znak:'))
-#     if char in text:
-#         return True
-#     else:
-#         return False
-#
-#
-# text = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-#
-# print(Search(text))
+# 4. Napisz funkcję, która będzie szukala podanego znaku w ciagu znaków
+
+def Search(text):
+    char = str(input('Podaj znak:'))
+    if char in text:
+        return True
+    else:
+        return False
+
+
+text = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+print(Search(text))
 
 
 # -----------------------------------------------------------------------------------------------------------------------
@@ -156,7 +156,6 @@ human = Czlowiek(name="Tomasz", age=42, sex="M")
 kid = Dziecko(name="Ania", age=8, sex="F", fav_toy="Dollhause")
 kid2 = Przedszkolak(name="Michał", age=5, sex="M", fav_toy="Teddy bear", group="Smurfs")
 
-
 human.show_info()
 human.sleep()
 human.drink("water")
@@ -166,3 +165,44 @@ kid.drink("juice")
 
 kid2.show_info()
 kid2.sleep()
+
+
+# 2. (*) Napisz 3 klasy, ktore beda obrazowaly zaleznosc (Auto, Budynek) -->Kamper, kazda
+# klasa musi miec minimum 2 metody. Jest to przykład multiple inheritance, którego nie
+# mieliśmy na zajęciach.
+
+
+class Auto():
+    def __init__(self, brand):
+        self.brand = brand
+
+    def ride(self):
+        print("The {} rides".format(self.brand))
+
+    def refuel(self):
+        print("The {} has full tank".format(self.brand))
+
+
+class Budynek():
+    def __init__(self, places):
+        self.places = places
+
+    def bedroom(self):
+        print("Object has {} places in bedroom bedroom".format(self.places))
+
+    def clean(self):
+        print("The bedroom is cleaned")
+
+
+class Kamper(Auto, Budynek):
+    def __init__(self, brand, places):
+        Auto.__init__(self, brand)
+        Budynek.__init__(self, places)
+
+
+kamp = Kamper(brand='BMW', places=4)
+
+kamp.ride()
+kamp.refuel()
+kamp.bedroom()
+kamp.clean()
